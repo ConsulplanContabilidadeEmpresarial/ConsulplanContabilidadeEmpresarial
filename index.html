@@ -1,554 +1,395 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulplan | Contabilidade e Planejamento Empresarial em Maceió - AL</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Fonts Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #0d2c4a;
-            --secondary-color: #1a5b8c;
-            --accent-color: #c5a059;
-            --light-bg: #f8f9fa;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulplan Contabilidade e Planejamento Empresarial | Maceió - AL</title>
+  <meta name="description" content="Consulplan Contabilidade e Planejamento Empresarial: escritório de contabilidade em Maceió/AL desde 2009. Abertura de empresas, fiscal, folha de pagamento e planejamento tributário.">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #333;
-        }
+  <!-- Bootstrap 5 + Ícones + Fonte -->
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css)" rel="stylesheet">
+  <link href="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)" rel="stylesheet">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
 
-        /* Top Bar */
-        .top-bar {
-            background-color: var(--primary-color);
-            color: #ffffff;
-            font-size: 0.9rem;
-        }
+  <style>
+    :root{
+      --azul:#0b3d63;
+      --azul-escuro:#072a45;
+      --verde:#1aa37a;
+      --dourado:#f2b632;
+      --cinza:#f4f7fa;
+    }
+    *{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;color:#33475b}
+    h1,h2,h3,h4,h5{color:var(--azul);font-weight:600}
+    .text-verde{color:var(--verde)!important}
+    .bg-cinza{background:var(--cinza)}
+    section{padding:90px 0}
+    .titulo-secao span{color:var(--verde);font-weight:600;text-transform:uppercase;letter-spacing:2px;font-size:.85rem}
+    .titulo-secao h2{margin-top:8px}
+    .titulo-secao .linha{width:70px;height:4px;background:var(--dourado);border-radius:2px;margin:15px auto 0}
 
-        /* Navbar */
-        .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
+    /* Topbar e Navbar */
+    .topbar{background:var(--azul-escuro);color:#cfd9e3;font-size:.85rem}
+    .topbar a{color:#cfd9e3;text-decoration:none}
+    .navbar{box-shadow:0 2px 15px rgba(0,0,0,.08)}
+    .navbar-brand{font-weight:700;color:var(--azul)!important}
+    .navbar-brand i{color:var(--verde)}
+    .nav-link{font-weight:500;color:var(--azul)!important}
+    .nav-link:hover{color:var(--verde)!important}
+    .btn-verde{background:var(--verde);color:#fff;border:none;border-radius:30px;padding:10px 28px;font-weight:500}
+    .btn-verde:hover{background:#148a66;color:#fff}
+    .btn-contorno{border:2px solid #fff;color:#fff;border-radius:30px;padding:8px 26px;font-weight:500}
+    .btn-contorno:hover{background:#fff;color:var(--azul)}
 
-        .navbar-brand .brand-title {
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-        }
+    /* Hero */
+    .hero{
+      background:linear-gradient(120deg,rgba(7,42,69,.93),rgba(11,61,99,.85)),
+      url('[images.unsplash.com](https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80)') center/cover;
+      color:#fff;padding:140px 0 120px
+    }
+    .hero h1{color:#fff;font-size:2.8rem;font-weight:700}
+    .hero h1 span{color:var(--dourado)}
+    .hero .badge-hero{background:rgba(255,255,255,.12);padding:8px 18px;border-radius:30px;font-size:.9rem}
+    .hero-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:30px;backdrop-filter:blur(6px)}
+    .hero-card i{font-size:1.6rem;color:var(--dourado)}
 
-        .navbar-brand .brand-subtitle {
-            color: var(--accent-color);
-            font-size: 0.75rem;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
+    /* Números */
+    .numeros{background:var(--verde);color:#fff;padding:50px 0}
+    .numeros h3{color:#fff;font-size:2.3rem;font-weight:700;margin:0}
 
-        .nav-link {
-            color: #444;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    /* Cards */
+    .card-servico{border:none;border-radius:16px;padding:35px 25px;transition:.3s;height:100%;box-shadow:0 5px 25px rgba(0,0,0,.06)}
+    .card-servico:hover{transform:translateY(-8px);box-shadow:0 15px 35px rgba(11,61,99,.15)}
+    .icone{width:70px;height:70px;border-radius:18px;display:flex;align-items:center;justify-content:center;
+      font-size:1.9rem;background:linear-gradient(135deg,var(--azul),var(--verde));color:#fff;margin-bottom:20px}
+    .diferencial i{font-size:2rem;color:var(--verde)}
+    .passo{position:relative;text-align:center}
+    .passo .num{width:60px;height:60px;border-radius:50%;background:var(--dourado);color:var(--azul-escuro);
+      font-weight:700;font-size:1.4rem;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
 
-        .nav-link:hover {
-            color: var(--secondary-color);
-        }
+    /* Sócios */
+    .socio{border-radius:16px;background:#fff;padding:35px;text-align:center;box-shadow:0 5px 25px rgba(0,0,0,.06)}
+    .socio .avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--azul),var(--verde));
+      color:#fff;font-size:2.2rem;font-weight:600;display:flex;align-items:center;justify-content:center;margin:0 auto 15px}
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(rgba(13, 44, 74, 0.88), rgba(13, 44, 74, 0.88)), 
-                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-        }
+    /* Dados da empresa */
+    .tabela-dados td{padding:12px 15px}
+    .tabela-dados td:first-child{font-weight:600;color:var(--azul);width:45%}
+    .selo{display:inline-block;background:#e6f7f1;color:var(--verde);font-weight:600;padding:4px 14px;border-radius:20px;font-size:.85rem}
 
-        .hero-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
+    /* Frase */
+    .frase{background:linear-gradient(120deg,var(--azul),var(--azul-escuro));color:#fff;padding:70px 0}
+    .frase blockquote{font-size:1.6rem;font-weight:300;font-style:italic}
+    .frase i{font-size:3rem;color:var(--dourado)}
 
-        .accent-text {
-            color: var(--accent-color);
-        }
+    /* FAQ */
+    .accordion-button:not(.collapsed){background:var(--azul);color:#fff}
+    .accordion-button:focus{box-shadow:none}
 
-        /* Feature Cards & Services */
-        .card-custom {
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    /* Contato */
+    .info-contato{display:flex;gap:15px;margin-bottom:25px}
+    .info-contato i{font-size:1.4rem;color:#fff;background:var(--verde);width:50px;height:50px;min-width:50px;
+      border-radius:12px;display:flex;align-items:center;justify-content:center}
+    .form-control,.form-select{border-radius:10px;padding:12px}
+    .mapa iframe{width:100%;height:350px;border:0;border-radius:16px}
 
-        .card-custom:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
+    /* Rodapé */
+    footer{background:var(--azul-escuro);color:#b8c7d6;padding:60px 0 20px}
+    footer h5{color:#fff}
+    footer a{color:#b8c7d6;text-decoration:none}
+    footer a:hover{color:var(--dourado)}
 
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(13, 44, 74, 0.1);
-            color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 50px 0;
-        }
-
-        /* Buttons */
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: white;
-            font-weight: 600;
-            border: none;
-            padding: 12px 28px;
-        }
-
-        .btn-accent:hover {
-            background-color: #b08d4b;
-            color: white;
-        }
-
-        .btn-primary-custom {
-            background-color: var(--primary-color);
-            color: white;
-            font-weight: 600;
-            border: none;
-            padding: 12px 28px;
-        }
-
-        .btn-primary-custom:hover {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #081d33;
-            color: #a0aec0;
-        }
-
-        footer h5 {
-            color: white;
-        }
-
-        footer a {
-            color: #a0aec0;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: white;
-        }
-    </style>
+    /* Botão voltar ao topo */
+    #topo{position:fixed;bottom:25px;right:25px;width:48px;height:48px;border-radius:50%;background:var(--verde);
+      color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.3rem;z-index:999;box-shadow:0 5px 15px rgba(0,0,0,.2)}
+  </style>
 </head>
 <body>
 
-    <!-- Top Bar Info -->
-    <div class="top-bar py-2 d-none d-md-block">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div>
-                <span class="me-3"><i class="bi bi-geo-alt me-1 text-warning"></i> Serraria, Maceió - AL</span>
-                <span class="me-3"><i class="bi bi-patch-check me-1 text-warning"></i> CRC: AL-001203/O</span>
-                <span><i class="bi bi-building me-1 text-warning"></i> CNPJ: 11.427.926/0001-84</span>
-            </div>
-            <div>
-                <a href="tel:8233132936" class="text-white text-decoration-none me-3"><i class="bi bi-telephone me-1"></i> (82) 3313-2936</a>
-                <a href="mailto:eliana@tmaenergiasolar.com" class="text-white text-decoration-none"><i class="bi bi-envelope me-1"></i> Contato por E-mail</a>
-            </div>
+<!-- TOPBAR -->
+<div class="topbar py-2 d-none d-md-block">
+  <div class="container d-flex justify-content-between">
+    <div>
+      <i class="bi bi-geo-alt-fill me-1"></i> Serraria, Maceió - AL
+      <span class="mx-3">|</span>
+      <i class="bi bi-clock-fill me-1"></i> Seg a Sex: 08h às 18h
+    </div>
+    <div>
+      <a href="tel:+558233132936"><i class="bi bi-telephone-fill me-1"></i> (82) 3313-2936</a>
+      <span class="mx-3">|</span>
+      <a href="mailto:eliana@tmaenergiasolar.com"><i class="bi bi-envelope-fill me-1"></i> eliana@tmaenergiasolar.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white sticky-top py-3">
+  <div class="container">
+    <a class="navbar-brand fs-4" href="#inicio"><i class="bi bi-bar-chart-line-fill"></i> Consulplan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#diferenciais">Diferenciais</a></li>
+        <li class="nav-item"><a class="nav-link" href="#equipe">Sócios</a></li>
+        <li class="nav-item"><a class="nav-link" href="#faq">Dúvidas</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn btn-verde" href="#contato">Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <span class="badge-hero"><i class="bi bi-patch-check-fill me-1 text-warning"></i> Desde 2009 cuidando do seu negócio</span>
+        <h1 class="mt-4">Contabilidade inteligente e <span>planejamento empresarial</span> para sua empresa crescer</h1>
+        <p class="lead mt-3 mb-4">Somos a Consulplan: mais de 16 anos ajudando empresas de Maceió e de Alagoas a manter tudo em dia, pagar menos impostos dentro da lei e tomar decisões com segurança.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contato" class="btn btn-verde btn-lg"><i class="bi bi-chat-dots me-2"></i>Solicite um orçamento</a>
+          <a href="#servicos" class="btn btn-contorno btn-lg">Nossos serviços</a>
         </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="hero-card">
+          <div class="d-flex gap-3 mb-4"><i class="bi bi-shield-check"></i><div><h5 class="text-white mb-1">Registro no CRC</h5><small>CRC AL-001203/O</small></div></div>
+          <div class="d-flex gap-3 mb-4"><i class="bi bi-graph-up-arrow"></i><div><h5 class="text-white mb-1">Planejamento tributário</h5><small>Estratégias legais para reduzir custos</small></div></div>
+          <div class="d-flex gap-3"><i class="bi bi-people"></i><div><h5 class="text-white mb-1">Atendimento próximo</h5><small>Contadores que conhecem sua realidade</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NÚMEROS -->
+<div class="numeros">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3"><i class="bi bi-calendar-check fs-2"></i><h3>2009</h3><p class="mb-0">Ano de fundação</p></div>
+      <div class="col-6 col-md-3"><i class="bi bi-award fs-2"></i><h3>+16</h3><p class="mb-0">Anos de experiência</p></div>
+      <div class="col-6 col-md-3"><i class="bi bi-geo fs-2"></i><h3>AL</h3><p class="mb-0">Atuação em Alagoas</p></div>
+      <div class="col-6 col-md-3"><i class="bi bi-check2-circle fs-2"></i><h3>100%</h3><p class="mb-0">Compromisso com a lei</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=80)" class="img-fluid rounded-4 shadow" alt="Equipe de contabilidade em reunião">
+      </div>
+      <div class="col-lg-6">
+        <div class="titulo-secao"><span>Quem somos</span><h2>Consulplan Contabilidade e Planejamento Empresarial</h2></div>
+        <p class="mt-3">Fundada em <strong>28 de dezembro de 2009</strong>, a <strong>Consulplan Contabilidade Empresarial LTDA</strong> fica no bairro da Serraria, em Maceió (AL). Atendemos empresas de todos os portes com serviços contábeis, fiscais, trabalhistas e de planejamento empresarial.</p>
+        <p>Para nós, a contabilidade vai além da obrigação legal. Ela é uma ferramenta de gestão. Por isso, entregamos informação clara e orientação estratégica para que você possa focar no que faz de melhor: fazer sua empresa crescer.</p>
+        <div class="row g-3 mt-2">
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 h-100"><i class="bi bi-bullseye text-verde fs-3"></i><h6 class="mt-2">Missão</h6><small>Dar segurança e clareza à gestão dos nossos clientes.</small></div></div>
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 h-100"><i class="bi bi-eye text-verde fs-3"></i><h6 class="mt-2">Visão</h6><small>Ser referência em contabilidade consultiva em Alagoas.</small></div></div>
+          <div class="col-sm-4"><div class="p-3 bg-cinza rounded-3 h-100"><i class="bi bi-gem text-verde fs-3"></i><h6 class="mt-2">Valores</h6><small>Ética, transparência, sigilo e compromisso.</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos" class="bg-cinza">
+  <div class="container">
+    <div class="titulo-secao text-center mb-5"><span>O que fazemos</span><h2>Nossos Serviços</h2><div class="linha"></div></div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-building-add"></i></div><h5>Abertura de Empresas</h5><p>Constituição, alteração e baixa de empresas, com orientação sobre o melhor tipo societário e regime tributário.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-journal-text"></i></div><h5>Contabilidade Empresarial</h5><p>Escrituração contábil, balanços, DRE e demonstrativos para uma visão real da saúde financeira do negócio.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-receipt"></i></div><h5>Assessoria Fiscal</h5><p>Apuração de impostos, obrigações acessórias, Simples Nacional, Lucro Presumido e Lucro Real.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-person-badge"></i></div><h5>Departamento Pessoal</h5><p>Folha de pagamento, admissões, rescisões, férias, eSocial e todas as rotinas trabalhistas.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-graph-up-arrow"></i></div><h5>Planejamento Tributário</h5><p>Análise estratégica para reduzir a carga tributária de forma legal e aumentar sua lucratividade.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="card card-servico"><div class="icone"><i class="bi bi-lightbulb"></i></div><h5>Consultoria Empresarial</h5><p>Apoio na tomada de decisões, viabilidade de negócios, fluxo de caixa e planejamento financeiro.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE -->
+<div class="frase text-center">
+  <div class="container">
+    <i class="bi bi-quote"></i>
+    <blockquote class="mt-2 mb-3">"Empresa organizada é empresa preparada para crescer. Cuidamos dos números para você cuidar dos sonhos."</blockquote>
+    <p class="mb-0 text-warning fw-semibold">Equipe Consulplan</p>
+  </div>
+</div>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="container">
+    <div class="titulo-secao text-center mb-5"><span>Por que nos escolher</span><h2>Nossos Diferenciais</h2><div class="linha"></div></div>
+    <div class="row g-4 diferencial">
+      <div class="col-md-6 col-lg-3 text-center"><i class="bi bi-hourglass-split"></i><h5 class="mt-3">Experiência</h5><p>Mais de 16 anos no mercado contábil alagoano.</p></div>
+      <div class="col-md-6 col-lg-3 text-center"><i class="bi bi-lock"></i><h5 class="mt-3">Sigilo e Ética</h5><p>Seus dados tratados com total confidencialidade.</p></div>
+      <div class="col-md-6 col-lg-3 text-center"><i class="bi bi-headset"></i><h5 class="mt-3">Atendimento Humano</h5><p>Contato direto com quem cuida da sua empresa.</p></div>
+      <div class="col-md-6 col-lg-3 text-center"><i class="bi bi-laptop"></i><h5 class="mt-3">Tecnologia</h5><p>Processos digitais, ágeis e seguros.</p></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="bi bi-journal-bookmark-fill text-primary display-6 me-2"></i>
-                <div>
-                    <span class="brand-title">CONSULPLAN</span>
-                    <span class="brand-subtitle">Contabilidade & Planejamento</span>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="#inicio">Início</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#sobre">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#diferenciais">Diferenciais</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#contato">Contato</a></li>
-                    <li class="nav-item ms-lg-2">
-                        <a href="https://wa.me/558233132936" target="_blank" class="btn btn-accent rounded-pill px-4 btn-sm">
-                            <i class="bi bi-whatsapp me-1"></i> Fale Conosco
-                        </a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Como funciona -->
+    <div class="titulo-secao text-center mt-5 pt-4 mb-5"><span>Simples assim</span><h2>Como Funciona</h2><div class="linha"></div></div>
+    <div class="row g-4">
+      <div class="col-md-3 passo"><div class="num">1</div><h6>Contato</h6><p class="small">Você fala com a gente por telefone, e-mail ou formulário.</p></div>
+      <div class="col-md-3 passo"><div class="num">2</div><h6>Diagnóstico</h6><p class="small">Analisamos a situação e as necessidades da sua empresa.</p></div>
+      <div class="col-md-3 passo"><div class="num">3</div><h6>Proposta</h6><p class="small">Apresentamos um plano sob medida e transparente.</p></div>
+      <div class="col-md-3 passo"><div class="num">4</div><h6>Acompanhamento</h6><p class="small">Cuidamos de tudo e orientamos você mês a mês.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SÓCIOS -->
+<section id="equipe" class="bg-cinza">
+  <div class="container">
+    <div class="titulo-secao text-center mb-5"><span>Liderança</span><h2>Quadro de Sócios</h2><div class="linha"></div></div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-5 col-lg-4">
+        <div class="socio"><div class="avatar">DL</div><h5>Denis Lins Alvares</h5><p class="text-verde fw-semibold mb-1">Sócio-Administrador</p><small>Gestão e planejamento empresarial</small></div>
+      </div>
+      <div class="col-md-5 col-lg-4">
+        <div class="socio"><div class="avatar">JI</div><h5>Jose Inaldo Lima da Silva</h5><p class="text-verde fw-semibold mb-1">Sócio-Administrador</p><small>Gestão contábil e fiscal</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DADOS INSTITUCIONAIS -->
+<section id="dados">
+  <div class="container">
+    <div class="titulo-secao text-center mb-5"><span>Transparência</span><h2>Dados Institucionais</h2><div class="linha"></div></div>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-3 h-100">
+          <h5 class="px-2 pt-2"><i class="bi bi-file-earmark-text text-verde me-2"></i>Registro</h5>
+          <table class="table tabela-dados mb-0">
+            <tr><td>CNPJ</td><td>11.427.926/0001-84</td></tr>
+            <tr><td>Razão Social</td><td>Consulplan Contabilidade Empresarial LTDA</td></tr>
+            <tr><td>Nome Fantasia</td><td>Consulplan Contabilidade e Planejamento Empresarial</td></tr>
+            <tr><td>CRC</td><td>AL-001203/O</td></tr>
+            <tr><td>Data de Abertura</td><td>28/12/2009</td></tr>
+            <tr><td>Situação Cadastral</td><td><span class="selo"><i class="bi bi-check-circle-fill me-1"></i>Ativa</span></td></tr>
+          </table>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="inicio" class="hero-section text-center text-lg-start">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 uppercase fw-bold">Tradição & Eficiência</span>
-                    <h1 class="hero-title mb-4">Gestão contábil e planejamento estratégico para <span class="accent-text">impulsionar seu negócio</span>.</h1>
-                    <p class="lead mb-4 opacity-90">Com mais de 16 anos de atuação em Maceió, oferecemos soluções contábeis sob medida para micro e pequenas empresas buscarem a máxima eficiência tributária e crescimento seguro.</p>
-                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-                        <a href="#contato" class="btn btn-accent btn-lg rounded-pill">Solicitar Orçamento</a>
-                        <a href="#sobre" class="btn btn-outline-light btn-lg rounded-pill">Conheça a Consulplan</a>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card border-0 shadow-sm rounded-4 p-3 h-100">
+          <h5 class="px-2 pt-2"><i class="bi bi-briefcase text-verde me-2"></i>Atividade e Enquadramento</h5>
+          <table class="table tabela-dados mb-0">
+            <tr><td>Atividade Principal (CNAE)</td><td>69.20-6-01 - Atividades de contabilidade</td></tr>
+            <tr><td>Natureza Jurídica</td><td>Sociedade Empresária Limitada</td></tr>
+            <tr><td>Porte</td><td>Microempresa</td></tr>
+            <tr><td>Regime</td><td>Simples Nacional (desde 01/01/2024)</td></tr>
+            <tr><td>Tipo</td><td>Matriz</td></tr>
+            <tr><td>Capital Social</td><td>R$ 10.000,00</td></tr>
+          </table>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Destaques rápidos -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm border-start border-4 border-primary">
-                        <i class="bi bi-shield-check text-primary display-5 me-3"></i>
-                        <div>
-                            <h6 class="mb-1 fw-bold">Regularidade Plena</h6>
-                            <small class="text-muted">Empresa Registrada sob o CRC AL-001203/O</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm border-start border-4 border-warning">
-                        <i class="bi bi-percent text-warning display-5 me-3"></i>
-                        <div>
-                            <h6 class="mb-1 fw-bold">Especialistas no Simples</h6>
-                            <small class="text-muted">Optantes e especialistas no regime Simples Nacional</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex align-items-center p-3 bg-white rounded shadow-sm border-start border-4 border-primary">
-                        <i class="bi bi-clock-history text-primary display-5 me-3"></i>
-                        <div>
-                            <h6 class="mb-1 fw-bold">Experiência Comprovada</h6>
-                            <small class="text-muted">Desde 2009 atuando no mercado alagoano</small>
-                        </div>
-                    </div>
-                </div>
+<!-- FAQ -->
+<section id="faq" class="bg-cinza">
+  <div class="container" style="max-width:850px">
+    <div class="titulo-secao text-center mb-5"><span>Tire suas dúvidas</span><h2>Perguntas Frequentes</h2><div class="linha"></div></div>
+    <div class="accordion" id="acc">
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Vocês fazem a abertura da minha empresa?</button></h2>
+        <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#acc"><div class="accordion-body">Sim! Cuidamos de todo o processo: escolha do tipo societário, regime tributário, registros e licenças.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Posso trocar de contador a qualquer momento?</button></h2>
+        <div id="f2" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">Sim. Fazemos a transição com o escritório anterior de forma organizada e sem dor de cabeça para você.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">O que é planejamento tributário?</button></h2>
+        <div id="f3" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">É o estudo do melhor enquadramento e das melhores práticas fiscais para reduzir impostos de forma totalmente legal.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">Atendem empresas fora de Maceió?</button></h2>
+        <div id="f4" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">Sim. Com processos digitais, atendemos empresas de todo o estado de Alagoas.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="container">
+    <div class="titulo-secao text-center mb-5"><span>Fale com a gente</span><h2>Entre em Contato</h2><div class="linha"></div></div>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <div class="info-contato"><i class="bi bi-geo-alt-fill"></i><div><h6 class="mb-1">Endereço</h6><p class="mb-0">Rua Manoel Correia de Oliveira, 66<br>Quadra Cj Bethaville, Lote 6 - Serraria<br>Maceió - AL, CEP 57046-300</p></div></div>
+        <div class="info-contato"><i class="bi bi-telephone-fill"></i><div><h6 class="mb-1">Telefone</h6><a href="tel:+558233132936" class="text-decoration-none">(82) 3313-2936</a></div></div>
+        <div class="info-contato"><i class="bi bi-envelope-fill"></i><div><h6 class="mb-1">E-mail</h6><a href="mailto:eliana@tmaenergiasolar.com" class="text-decoration-none">eliana@tmaenergiasolar.com</a></div></div>
+        <div class="info-contato"><i class="bi bi-clock-fill"></i><div><h6 class="mb-1">Horário</h6><p class="mb-0">Segunda a sexta, das 08h às 18h</p></div></div>
+      </div>
+      <div class="col-lg-7">
+        <form class="card border-0 shadow-sm rounded-4 p-4" action="mailto:eliana@tmaenergiasolar.com" method="post" enctype="text/plain">
+          <div class="row g-3">
+            <div class="col-md-6"><input type="text" class="form-control" name="nome" placeholder="Seu nome" required></div>
+            <div class="col-md-6"><input type="email" class="form-control" name="email" placeholder="Seu e-mail" required></div>
+            <div class="col-md-6"><input type="tel" class="form-control" name="telefone" placeholder="Telefone / WhatsApp"></div>
+            <div class="col-md-6">
+              <select class="form-select" name="servico">
+                <option selected disabled>Serviço de interesse</option>
+                <option>Abertura de empresa</option><option>Contabilidade</option><option>Fiscal</option>
+                <option>Departamento Pessoal</option><option>Planejamento Tributário</option><option>Consultoria</option>
+              </select>
             </div>
-        </div>
-    </section>
+            <div class="col-12"><textarea class="form-control" rows="4" name="mensagem" placeholder="Sua mensagem"></textarea></div>
+            <div class="col-12"><button type="submit" class="btn btn-verde w-100 py-3"><i class="bi bi-send me-2"></i>Enviar mensagem</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="mapa mt-5">
+      <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="[google.com](https://www.google.com/maps?q=Rua+Manoel+Correia+de+Oliveira,+66,+Serraria,+Maceió+-+AL,+57046-300&output=embed)"></iframe>
+    </div>
+  </div>
+</section>
 
-    <!-- Sobre Nós -->
-    <section id="sobre" class="py-5">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Equipe de contabilidade" class="img-fluid rounded-3 shadow">
-                        <div class="position-absolute bottom-0 end-0 bg-primary text-white p-4 rounded-3 d-none d-md-block shadow" style="transform: translate(10%, 10%);">
-                            <p class="h2 mb-0 fw-bold">16+</p>
-                            <p class="mb-0 small">Anos de experiência contábil</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <h6 class="text-uppercase text-primary fw-bold">Sobre a Consulplan</h6>
-                    <h2 class="fw-bold mb-4">Seu parceiro de confiança para o crescimento sustentável</h2>
-                    <p class="text-muted mb-3">Fundada em 28 de dezembro de 2009, a <strong>Consulplan Contabilidade e Planejamento Empresarial</strong> (Consulplan Contabilidade Empresarial LTDA) atua prestando serviços completos de acessória fiscal, contábil e planejamento estratégico para empresas em Maceió e toda a região de Alagoas.</p>
-                    <p class="text-muted mb-4">Comandada por uma gestão dedicada e sócios-administradores experientes, nosso objetivo vai além de cumprir obrigações fiscais: entregamos dados precisos para que sua empresa tome decisões inteligentes, pague o justo em tributos e cresça de forma legal e segura.</p>
+<!-- RODAPÉ -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <h5><i class="bi bi-bar-chart-line-fill text-warning me-2"></i>Consulplan</h5>
+        <p class="small">Contabilidade e Planejamento Empresarial. Desde 2009 cuidando dos números das empresas alagoanas com ética e compromisso.</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h5>Links</h5>
+        <ul class="list-unstyled small">
+          <li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li>
+          <li><a href="#equipe">Sócios</a></li><li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-3">
+        <h5>Serviços</h5>
+        <ul class="list-unstyled small">
+          <li>Abertura de Empresas</li><li>Assessoria Fiscal</li><li>Departamento Pessoal</li><li>Planejamento Tributário</li>
+        </ul>
+      </div>
+      <div class="col-lg-3">
+        <h5>Contato</h5>
+        <p class="small mb-1"><i class="bi bi-telephone me-2"></i>(82) 3313-2936</p>
+        <p class="small mb-1"><i class="bi bi-envelope me-2"></i>eliana@tmaenergiasolar.com</p>
+        <p class="small"><i class="bi bi-geo-alt me-2"></i>Serraria, Maceió - AL</p>
+      </div>
+    </div>
+    <hr class="border-secondary">
+    <div class="text-center small">
+      Consulplan Contabilidade Empresarial LTDA · CNPJ 11.427.926/0001-84 · CRC AL-001203/O<br>
+      &copy; <span id="ano"></span> Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
 
-                    <div class="row g-3">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Razão Social Transparente</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Foco em Micro e Pequenas Empresas</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Planejamento Tributário Eficiente</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Atendimento Personalizado</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="#inicio" id="topo" title="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- Serviços (Atividades CNAE) -->
-    <section id="servicos" class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="text-center max-w-700 mx-auto mb-5">
-                <h6 class="text-uppercase text-primary fw-bold">O Que Fazemos</h6>
-                <h2 class="fw-bold">Nossas Soluções Contábeis</h2>
-                <p class="text-muted">Serviços estruturados com foco na atividade principal de contabilidade (CNAE 69.20-6-01).</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- Serviço 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-calculator"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Gestão Contábil Integral</h4>
-                        <p class="text-muted small">Elaboração de balancetes, balanço patrimonial, demonstrações de resultado e escrituração contábil em conformidade legal.</p>
-                    </div>
-                </div>
-                <!-- Serviço 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-receipt"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Assessoria Fiscal & Tributária</h4>
-                        <p class="text-muted small">Apuração de impostos do Simples Nacional, envio de obrigações acessórias e assessoria para redução legal da carga tributária.</p>
-                    </div>
-                </div>
-                <!-- Serviço 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-people"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Departamento Pessoal / RH</h4>
-                        <p class="text-muted small">Processamento de folha de pagamento, cálculo de férias, rescisões, admissões e gestão do eSocial para sua equipe.</p>
-                    </div>
-                </div>
-                <!-- Serviço 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-graph-up-arrow"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Planejamento Empresarial</h4>
-                        <p class="text-muted small">Análise financeira estratégica, auxílio no controle de custos e orientações para tomada de decisões corporativas.</p>
-                    </div>
-                </div>
-                <!-- Serviço 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Abertura e Regularização</h4>
-                        <p class="text-muted small">Abertura, alteração de contratos sociais, regularização de pendências cadastrais na Receita Federal e órgãos estaduais/municipais.</p>
-                    </div>
-                </div>
-                <!-- Serviço 6 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <div class="icon-box">
-                            <i class="bi bi-shield-lock"></i>
-                        </div>
-                        <h4 class="h5 fw-bold mb-3">Compliance & Certidões</h4>
-                        <p class="text-muted small">Emissão e monitoramento contínuo de certidões negativas para garantir que sua empresa permaneça sempre apta a operar.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quadro Societário e Credibilidade -->
-    <section id="diferenciais" class="py-5">
-        <div class="container py-4">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h6 class="text-uppercase text-primary fw-bold">Corpo Diretivo</h6>
-                    <h2 class="fw-bold mb-4">Liderança com responsabilidade e transparência</h2>
-                    <p class="text-muted mb-4">A Consulplan tem sua estrutura pautada pela ética profissional e qualificação técnica de seus administradores. Operando sob a natureza jurídica de Sociedade Empresária Limitada, garantimos acompanhamento próximo de cada cliente.</p>
-                    
-                    <div class="p-3 bg-light rounded border-start border-4 border-warning mb-3">
-                        <h6 class="fw-bold mb-1"><i class="bi bi-person-badge me-2 text-primary"></i>Denis Lins Alvares</h6>
-                        <small class="text-muted">Sócio-Administrador</small>
-                    </div>
-
-                    <div class="p-3 bg-light rounded border-start border-4 border-warning">
-                        <h6 class="fw-bold mb-1"><i class="bi bi-person-badge me-2 text-primary"></i>Jose Inaldo Lima da Silva</h6>
-                        <small class="text-muted">Sócio-Administrador</small>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="bg-primary text-white p-5 rounded-3 shadow">
-                        <h3 class="fw-bold mb-4">Ficha Técnica Empresarial</h3>
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <p class="mb-1 text-white-50 small">Situação Cadastral</p>
-                                <p class="fw-bold"><i class="bi bi-check-circle text-success"></i> ATIVA</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="mb-1 text-white-50 small">Regime Tributário</p>
-                                <p class="fw-bold">Simples Nacional</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="mb-1 text-white-50 small">Registro Profissional</p>
-                                <p class="fw-bold">CRC AL-001203/O</p>
-                            </div>
-                            <div class="col-6">
-                                <p class="mb-1 text-white-50 small">Porte da Empresa</p>
-                                <p class="fw-bold">Micro Empresa (ME)</p>
-                            </div>
-                            <div class="col-12">
-                                <p class="mb-1 text-white-50 small">Capital Social Registrado</p>
-                                <p class="fw-bold h5 text-warning">R$ 10.000,00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner CTA -->
-    <section class="bg-warning text-dark py-5">
-        <div class="container text-center">
-            <h2 class="fw-bold mb-3">Precisa regularizar ou otimizar a contabilidade da sua empresa?</h2>
-            <p class="lead mb-4">Fale diretamente com quem entende da realidade fiscal de Maceió e região.</p>
-            <a href="https://wa.me/558233132936" target="_blank" class="btn btn-primary-custom btn-lg rounded-pill">
-                <i class="bi bi-whatsapp me-2"></i> Converse Pelo WhatsApp Agora
-            </a>
-        </div>
-    </section>
-
-    <!-- Localização e Contato -->
-    <section id="contato" class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <h6 class="text-uppercase text-primary fw-bold">Onde Estamos</h6>
-                    <h2 class="fw-bold mb-4">Venha nos visitar ou entre em contato</h2>
-                    
-                    <div class="d-flex mb-4">
-                        <i class="bi bi-geo-alt-fill text-primary display-6 me-3"></i>
-                        <div>
-                            <h5 class="fw-bold mb-1">Endereço</h5>
-                            <p class="text-muted mb-0">Rua Manoel Correia de Oliveira, 66 - Quadra Cj Bethaville Lote 6</p>
-                            <p class="text-muted">Bairro Serraria - CEP: 57046-300 - Maceió / AL</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex mb-4">
-                        <i class="bi bi-telephone-fill text-primary display-6 me-3"></i>
-                        <div>
-                            <h5 class="fw-bold mb-1">Telefone</h5>
-                            <p class="text-muted mb-0">(82) 3313-2936</p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex mb-4">
-                        <i class="bi bi-envelope-fill text-primary display-6 me-3"></i>
-                        <div>
-                            <h5 class="fw-bold mb-1">E-mail Corporativo</h5>
-                            <p class="text-muted mb-0">eliana@tmaenergiasolar.com</p>
-                        </div>
-                    </div>
-
-                    <div class="mt-4">
-                        <a href="https://maps.google.com/?q=Rua+Manoel+Correia+de+Oliveira+66+Serraria+Maceio+AL" target="_blank" class="btn btn-outline-primary rounded-pill">
-                            <i class="bi bi-map me-2"></i> Abrir no Google Maps
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="bg-white p-4 p-md-5 rounded-3 shadow-sm">
-                        <h4 class="fw-bold mb-3">Envie uma mensagem</h4>
-                        <form>
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome" required>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email" placeholder="seu@email.com" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="telefone" class="form-label">Telefone / WhatsApp</label>
-                                    <input type="tel" class="form-control" id="telefone" placeholder="(82) 90000-0000" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="assunto" class="form-label">Assunto</label>
-                                <select class="form-select" id="assunto">
-                                    <option selected>Abertura de Empresa</option>
-                                    <option>Troca de Contador</option>
-                                    <option>Assessoria Fiscal / Simples Nacional</option>
-                                    <option>Outros Assuntos</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensagem" class="form-label">Mensagem</label>
-                                <textarea class="form-control" id="mensagem" rows="4" placeholder="Como podemos ajudar sua empresa?" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary-custom w-100 rounded-pill">Enviar Mensagem</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="pt-5 pb-3">
-        <div class="container">
-            <div class="row g-4 mb-4">
-                <div class="col-lg-5">
-                    <h5 class="fw-bold mb-3">Consulplan Contabilidade</h5>
-                    <p class="small">Consulplan Contabilidade e Planejamento Empresarial LTDA</p>
-                    <p class="small text-white-50">Soluções contábeis e fiscais com ética, eficiência e inovação. Atendimento dedicado a micro e pequenas empresas no estado de Alagoas.</p>
-                </div>
-                <div class="col-lg-3">
-                    <h5 class="fw-bold mb-3">Links Rápidos</h5>
-                    <ul class="list-unstyled small">
-                        <li class="mb-2"><a href="#inicio">Início</a></li>
-                        <li class="mb-2"><a href="#sobre">Sobre Nós</a></li>
-                        <li class="mb-2"><a href="#servicos">Nossos Serviços</a></li>
-                        <li class="mb-2"><a href="#contato">Localização & Contato</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Dados Oficiais</h5>
-                    <p class="small mb-1"><strong>CNPJ:</strong> 11.427.926/0001-84</p>
-                    <p class="small mb-1"><strong>CRC:</strong> AL-001203/O</p>
-                    <p class="small mb-1"><strong>Razão Social:</strong> Consulplan Contabilidade Empresarial LTDA</p>
-                    <p class="small mb-1"><strong>Endereço de Correspondência:</strong> Rua Manoel Correia de Oliveira 66 Quadraa Cj Bethaville Lote 6, Serraria, Maceió - AL, 57046-300</p>
-                </div>
-            </div>
-            <hr class="border-secondary">
-            <div class="text-center small text-white-50">
-                <p class="mb-0">&copy; 2026 Consulplan Contabilidade e Planejamento Empresarial. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+<script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js)"></script>
+<script>document.getElementById('ano').textContent = new Date().getFullYear();</script>
 </body>
 </html>
